@@ -1,0 +1,69 @@
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#clear-results {
+    width: 10em;
+}
+
+.recent-search { 
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+.wrap-buttons {
+    border: 1px solid lightgray;
+    margin-left: .5em;
+    margin-bottom: 1em;
+    border-radius: .5em;
+    background: lightskyblue;
+}
+.btn-delete {
+    border-left: 1px solid black;
+    border-radius: 0;
+}
+
+.giphy-content{
+    column-count: 5;
+    column-gap: 2px;
+}
+.giphy{
+    border: 1px solid black;
+    border-radius: .5em;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-bottom: .5em;
+    page-break-inside: avoid;
+    background-color: white;
+    box-shadow: 9px 20px 10px rgba(0,0,0,0.5);  
+}
+.giphy img {
+    width: 100%;
+    height: 100%;
+}
+.fa-play{
+    font-size: .9em;
+    background-color: pink;
+    border-radius: 50%;
+    padding: 1em;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color:black;
+}
+.favorite {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border-bottom-left-radius: .5em;
+    background-color: red;
+}
+.active{
+    background-color: blueviolet;
+}
