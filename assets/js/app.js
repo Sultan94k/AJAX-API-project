@@ -1,5 +1,5 @@
 let buttons = ['Monkeys', 'Dogs', 'Kittens', 'Tigers', 'Lions']; //Initial value and objects
-const API_KEY = 'MgwflFY3uJycuTCUpzJQJsiuV6wHAGA9'
+const API_KEY = 'MgwflFY3uJycuTCUpzJQJsiuV6wHAGA9&limit=10'
 const endpoint = 'https://api.giphy.com/v1/gifs/search?api_key=' + API_KEY;
 
 // function loadButtons() {
@@ -49,30 +49,25 @@ function removeButton() {
 function addButton(value) {
     buttons.push(value);
 
-    renderButtons(); 
+    renderButtons();
 }
 
 function createGiphyTemplate(giphy) {
     const images = giphy.images;
     const template = `
     <div class="giphy">
-    <i class="far fa-star favorite" data-id="${giphy.id}" data-star="false">
-    </i>
     <div class="giphy-image">
         <img 
         src="${images.original_still.url}" 
         data-still="${images.original_still.url}" 
         data-animate="${images.original.url}" 
         data-state="still">
-        <i class="fa fa-play img-play"></i>
-     </div>
+        </div>
      <div class="giphy-info">
         <p>Rating: g</p>
-        <p>Posted A Year Ago</p>
-        </div>
+          </div>
   
      <div class="giphy-footer" data-link="${giphy.embed_url}"> 
-        <p>Copy Link <i class="fa fa-link"></i></p>
          </div>
          </div>
          `;
@@ -94,16 +89,16 @@ function renderGiphys(giphys) {
 
 function fetchGiphy(value) {
     const url = endpoint + '&q=' + value;
-    $.ajax({ 
+    $.ajax({
         url,
-    method: "GET"
+        method: "GET"
     }).then(function (response) {
-            giphys = response.data;
+        giphys = response.data;
 
-            renderGiphys(giphys);
-            console.log('Giphys: ', giphys);
+        renderGiphys(giphys);
+        console.log('Giphys: ', giphys);
 
-        })
+    })
         .catch(function (error) {
             console.log('Error: ', error);
         });
@@ -121,7 +116,7 @@ function searchGiphy(event) {
     }
     $('#search').val(''); //reset val
     console.log('seach giphy function complete')
-    
+
 }
 
 function imgCardClick() {
@@ -210,7 +205,7 @@ function disableSearchButton() {
 function inputApp() {
 
     const value = generateRandomValue(buttons);
-   // loadButtons();
+    // loadButtons();
     renderButtons();
     fetchGiphy(value);
 }
