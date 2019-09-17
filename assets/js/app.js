@@ -1,15 +1,11 @@
-
-
-
 let buttons = ['Monkeys', 'Dogs', 'Kittens', 'Tigers', 'Lions']; //Initial value and objects
 const API_KEY = 'MgwflFY3uJycuTCUpzJQJsiuV6wHAGA9'
-const endpoint = 'https://api.giphy.com/v1/gifs/search?api_key=MgwflFY3uJycuTCUpzJQJsiuV6wHAGA9';
+const endpoint = 'https://api.giphy.com/v1/gifs/search?api_key=' + API_KEY;
 
-
-function loadButtons() {
-    const listButtons = JSON.parse(localStorage.getItem('buttons'));
-     buttons = listButtons;
-};
+// function loadButtons() {
+//     const listButtons = JSON.parse(localStorage.getItem('buttons'));
+//      buttons = listButtons;
+// };
 
 
 function renderButtons() {
@@ -24,27 +20,18 @@ function renderButtons() {
                 <button 
                 class="btn btn-search"
                 data-name="${buttonName}"
-                >${buttonName}</button>
-                <button
-                    data-name="${buttonName}"
-                    data-index="${i}"
-                    class="btn btn-delete fas fa-times"
-                ></button>
-            
-
-        </div>
-        `;
-
+                >${buttonName}
+            </button>
+            <button
+                data-name="${buttonName}"
+                data-index="${i}"
+                class="btn btn-delete fas fa-times"
+            ></button>
+        </div>`;
         $('.recent-search').append(button);
-
     }
-
-    localStorage.setItem('buttons', JSON.stringify(buttons));
+    // localStorage.setItem('buttons', JSON.stringify(buttons));
 }
-
-
-
-
 
 function removeButton() {
 
@@ -57,18 +44,13 @@ function removeButton() {
     renderButtons();
 
     console.log('button Name: ', buttonIndex);
-
 }
-
-
 
 function addButton(value) {
     buttons.push(value);
 
     renderButtons(); 
-
 }
-
 
 function createGiphyTemplate(giphy) {
     const images = giphy.images;
@@ -112,8 +94,10 @@ function renderGiphys(giphys) {
 
 function fetchGiphy(value) {
     const url = endpoint + '&q=' + value;
-    $.ajax({ url })
-        .then(function (response) {
+    $.ajax({ 
+        url,
+    method: "GET"
+    }).then(function (response) {
             giphys = response.data;
 
             renderGiphys(giphys);
@@ -126,41 +110,37 @@ function fetchGiphy(value) {
 }
 
 function searchGiphy(event) {
+    console.log('search giphy function has started')
     event.preventDefault();
 
     const value = $('#search').val();
     if (buttons.includes(value)) {
         alert('this is already added!')
     } else {
-
+        addButton(value)
     }
     $('#search').val(''); //reset val
+    console.log('seach giphy function complete')
+    
 }
 
 function imgCardClick() {
     const giphyCard = $(this);
 
     const img = giphyCard.find('img');
-    const icon = giphyCard.find('i');
+    // const icon = giphyCard.find('i');
 
     const still = img.attr('data-still');
     const animate = img.attr('data-animate');
     const state = img.attr('data-state');
 
     if (state === 'still') {
-        img.attr({
-            src: animate,
-            'data-state': 'animate'
-        });
+        img.attr("src", animate)
+            .attr("data-state", "animate");
 
-        icon.removeClass('img-play');
     } else {
-        img.attr({
-            src: still,
-            'data-state': 'still'
-        });
-
-        icon.addClass('img-play');
+        img.attr("src", still)
+            .attr("data-state", "still");
     }
 }
 
@@ -230,7 +210,7 @@ function disableSearchButton() {
 function inputApp() {
 
     const value = generateRandomValue(buttons);
-    loadButtons();
+   // loadButtons();
     renderButtons();
     fetchGiphy(value);
 }
@@ -241,7 +221,8 @@ inputApp();
 $(document).on('click', '.btn-delete', removeButton);  //With this function gets deleted
 $(document).on('click', '.giphy-image', imgCardClick);
 $(document).on('click', '.giphy-footer', copyLink);
-$(document).on('click', '.btn-search', searchGiphy);
+$(document).on('click', '.btn-search', searchGiphyByButton);
+
 // $(document).on('click', '.giphy-image', function(){  
 //});
 $('#submit-button').on('click', searchGiphy);

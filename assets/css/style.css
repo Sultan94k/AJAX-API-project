@@ -1,7 +1,11 @@
 form {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    float: right;
+
+}
+.form-control{
+    width: 200px;
 }
 #clear-results {
     width: 10em;
