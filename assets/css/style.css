@@ -38,17 +38,17 @@ body{
     column-gap: 2px;
 }
 .giphy{
-    border: 1px solid black;
+    border: 0px solid yellowgreen;
     border-radius: .5em;
     page-break-inside: avoid;
     position: relative;
     overflow: hidden;
-    margin: 0;
+    margin: 5px;
     padding: 0;
     margin-bottom: .5em;
     page-break-inside: avoid;
     background-color: white;
-    box-shadow: 9px 20px 10px rgba(0,0,0,0.5);  
+    box-shadow: 9px 20px 10px rgba(0.9,0.7,0.6,0.5);  
 }
 .giphy img {
     width: 100%;
