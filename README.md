@@ -3,7 +3,7 @@
 
   Do you like watching movies in particular genres? Then this is the app you looking for. This is full stack web application that serves as a personal media library to keep track of movies that you would like to watch as well as the ones that you have watched already and save it as favorite.
 
-#### Direct link to app: [omdb.com]
+##### [Click here to access our app](https://www.google.com)
 
 ## Home page
 
