@@ -9,24 +9,34 @@
 
 ## Technologies used:
 
-Node.js (Javascript environment)
+- Node.js (Javascript environment)
 
-Bootstrap 4 
+- Bootstrap 4 
 
-Font awsome (Style)
+- Font awsome (Style)
 
-Cards, Modal
+- Cards, Modal
 
-Express.js 
+- Express.js 
 
-Handlebars 
+- Handlebars 
 
-Heroku 
+- Heroku 
 
-MySQL
+- MySQL
 
-Sequelize 
+- Sequelize 
 
 ## Authentication 
+This is basics of login password authentication 
+ ### Screenshots
+ 
+### - Functionality 
+
+- Log in
+- via username & password
+- via email & password
+- Create an account
+- Log out
 
 ## Authors:
