@@ -6,25 +6,25 @@
 ##### [Click here to access our app](https://www.google.com)
 
 ## Home page
+###  Screenshots
+###### Main page
+<img width="1680" alt="main page" src="https://user-images.githubusercontent.com/52087686/67365638-9bf45c00-f537-11e9-844d-68b1f00dec89.png">
+###### Search result
+<img width="1680" alt="search page" src="https://user-images.githubusercontent.com/52087686/67365661-a282d380-f537-11e9-89b3-0b0ae271b3c5.png">
+###### Survey
+<img width="1680" alt="survey page" src="https://user-images.githubusercontent.com/52087686/67365675-a7478780-f537-11e9-91c6-d0e913d51574.png">
+
 
 ## Technologies used:
 
 - Node.js (Javascript environment)
-
 - Bootstrap 4 
-
 - Font awsome (Style)
-
 - Cards, Modal
-
 - Express.js 
-
 - Handlebars 
-
 - Heroku 
-
 - MySQL
-
 - Sequelize 
 
 ## Authentication 
@@ -41,3 +41,4 @@ This is basics of login password authentication
 - Log out
 
 ## Authors:
+*S.Karimov S.Lastname S.Lastname V.Lastname*
