@@ -6,7 +6,7 @@
 ##### [Click here to access our app](https://www.google.com)
 
 ## Home page
-###  Screenshots
+ ###  <dt>Screenshots </dt>
 ###### Main page
 <img width="1680" alt="main page" src="https://user-images.githubusercontent.com/52087686/67365638-9bf45c00-f537-11e9-844d-68b1f00dec89.png">
 
