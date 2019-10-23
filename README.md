@@ -29,9 +29,9 @@
 
 ## Authentication 
 This is basics of login password authentication 
- ### Screenshots
+ ###  Screenshots
  
-### - Functionality 
+###   Functionality 
 
 - Log in
 - via username & password
